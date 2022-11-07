@@ -62,7 +62,7 @@ var getUserTweets = function(tweets, user) {
  */
 
 // use _.filter to return the fruits array with only the desired fruit.
-// I - Fruits array, targetFruit function.
+// I - Fruits array, targetFruit string.
 // O - Array with specified fruit string.
 // C - Should not create new array.
 // E - None listed.
@@ -90,8 +90,16 @@ var startsWith = function (fruits, letter) {
 };
 
 // return a filtered array containing only cookie-type desserts.
+// I - desserts (array of dessert objects).
+// O - array with dessert objects where type is cookie.
+// C - None.
+// E - None.
 var cookiesOnly = function (desserts) {
+  var cookies = _.filter(desserts, function(dessert) {
+    return dessert.type === 'cookie';
+  });
 
+  return cookies;
 };
 
 // rebuild the getUserTweets function from above with _.filter instead
