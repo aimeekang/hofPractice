@@ -103,8 +103,16 @@ var cookiesOnly = function (desserts) {
 };
 
 // rebuild the getUserTweets function from above with _.filter instead
+// I - tweets array of tweet objects, user string.
+// O - array of tweet objects for the given user.
+// C - should not create a new array.
+// E - none listed.
 var filterUserTweets = function(tweets, user) {
+  var result = _.filter(tweets, function(tweet) {
+    return tweet.user === user;
+  });
 
+  return result;
 };
 
 /*
