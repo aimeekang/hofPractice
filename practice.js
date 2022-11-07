@@ -27,7 +27,7 @@ var moreFruits = function (fruits) {
 var multiplesOfFive = function (numbers) {
   var count = 0;
 
-  _.each(numbers, function (number, index, collection) {
+  _.each(numbers, function (number, index) {
     if (number % 5 === 0) {
       count += 1;
     }
@@ -37,8 +37,22 @@ var multiplesOfFive = function (numbers) {
 };
 
 // use _.each to build an array containing only tweets belonging to a specified user.
-var getUserTweets = function(tweets, user) {
 
+// I - tweets (array of tweet objects), user.
+// O - Array of tweets belonging to a specific user.
+// C - None.
+// E - None.
+
+var getUserTweets = function(tweets, user) {
+  var result = [];
+
+  _.each(tweets, function(tweet) {
+    if (tweet.user === user) {
+      result.push(tweet);
+    }
+  });
+
+  return result;
 };
 
 /*
