@@ -62,8 +62,17 @@ var getUserTweets = function(tweets, user) {
  */
 
 // use _.filter to return the fruits array with only the desired fruit.
+// I - Fruits array, targetFruit function.
+// O - Array with specified fruit string.
+// C - Should not create new array.
+// E - None listed.
 var onlyOneFruit = function (fruits, targetFruit) {
 
+  var desiredFruit = _.filter(fruits, function(fruit) {
+    return fruit === targetFruit;
+  });
+
+  return desiredFruit;
 };
 
 // use _.filter to return the fruits array with only fruits
