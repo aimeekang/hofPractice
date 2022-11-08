@@ -217,8 +217,16 @@ var applyCoupon = function (groceries, coupon) {
  */
 
 // return the total price of all products.
+// I - products (array of objects).
+// O - total price of all products (number).
+// C -
+// E -
 var sumTotal = function (products) {
+  var totalPrice = _.reduce(products, function(memo, item) {
+    return memo + Number(item.price.slice(1));
+  }, 0);
 
+  return totalPrice;
 };
 
 // return an object consisting of dessert types and how many of each.
