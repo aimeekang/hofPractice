@@ -284,8 +284,20 @@ var countMessagesPerUser = function(tweets) {
 // given an array of movie data objects,return an array containing
 // movies that came out between 1990 and 2000.
 // TIP: use an array as your accumulator - don't push to an external array!
-var ninetiesKid = function (movies) {
 
+// I - movies (array of movie objects)
+// O - array with movies that came out between 1990 and 2000.
+// C - use array as accumulator (don't push to external array)
+// E - none listed.
+
+var ninetiesKid = function (movies) {
+  _.reduce(movies, function(memo, movie) {
+    if (movie.releaseYear > 1990 && movie.releaseYear < 2000) {
+      result.push(movie.title);
+    }
+  }, result = []);
+
+  return result;
 };
 
 // return an boolean stating if there exists a movie with a shorter
