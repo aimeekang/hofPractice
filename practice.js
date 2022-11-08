@@ -303,6 +303,18 @@ var ninetiesKid = function (movies) {
 // return an boolean stating if there exists a movie with a shorter
 // runtime than your time limit.
 // timeLimit is an integer representing a number of minutes.
-var movieNight = function (movies, timeLimit) {
 
+// I - movies (array of movie objects), timeLimit (number) in minutes.
+// O - boolean
+// C - none listed.
+// E - none listed.
+
+var movieNight = function (movies, timeLimit) {
+  var withinLimit = _.reduce(movies, function(memo, movie) {
+    if (movie.runtime < timeLimit) {
+      result = true;
+    }
+  }, result = false);
+
+  return result;
 };
