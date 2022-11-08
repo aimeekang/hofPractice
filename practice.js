@@ -262,8 +262,23 @@ var dessertCategories = function (desserts) {
     "sharksforcheap": 3
   }
 */
-var countMessagesPerUser = function(tweets) {
 
+// I - tweets (array of tweet objects).
+// O - object with user as key, and count of user messages as value.
+// C - use _.reduce
+// E - none listed.
+var countMessagesPerUser = function(tweets) {
+  _.reduce(tweets, function(memo, tweet) {
+    var username = tweet.user;
+
+    if (result[username] === undefined) {
+      result[username] = 1;
+    } else {
+      result[username] += 1;
+    }
+  }, result = {});
+
+  return result;
 };
 
 // given an array of movie data objects,return an array containing
