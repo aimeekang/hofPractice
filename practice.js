@@ -231,8 +231,24 @@ var sumTotal = function (products) {
 
 // return an object consisting of dessert types and how many of each.
 // exampleOutput: { dessertType: 3, dessertType2: 1 }
-var dessertCategories = function (desserts) {
 
+// I - desserts (array of dessert objects)
+// O - object with dessertType key and count of dessertType value.
+// C - none listed.
+// E - none listed.
+var dessertCategories = function (desserts) {
+  _.reduce(desserts, function(memo, dessert) {
+    var dessertType = dessert.type;
+    console.log(result, memo, dessert);
+
+    if (result[dessertType] === undefined) {
+      result[dessertType] = 1;
+    } else {
+      result[dessertType] += 1;
+    }
+  }, result = {});
+
+  return result;
 };
 
 // return an object with the proper count of all user messages
