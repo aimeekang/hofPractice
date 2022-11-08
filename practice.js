@@ -194,8 +194,20 @@ var allUserMessages = function(tweets) {
   ];
 
 */
-var applyCoupon = function (groceries, coupon) {
 
+// I - groceries array of item objects.
+// O - array of grocery items with a new property 'salePrice'.
+// C - none listed.
+// E - none listed.
+var applyCoupon = function (groceries, coupon) {
+  var saleItems = _.map(groceries, function(item) {
+    var priceAmount = Number(item.price.slice(1)).toFixed(2) * 100; // 1210
+    var newPrice = priceAmount * (1 - coupon); // 1210 * .8
+    item['salePrice'] = '$' + (newPrice / 100).toFixed(2);
+    return item;
+  });
+
+  return saleItems;
 };
 
 /*
